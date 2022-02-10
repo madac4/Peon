@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from '../components/Slider'
 import Categories from '../components/Categories'
-import Watched from '../components/Watched'
+// import Watched from '../components/Watched'
 import Brands from '../components/Brands'
 
 function Home() {
