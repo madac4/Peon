@@ -145,3 +145,24 @@
         }
     }
 }
+
+.brands{
+    &__container{}
+    &__body{
+        .brands-body__item{
+            @include adaptiv-value('border-radius', 20, 10, 1);
+            @include adaptiv-value('height', 230, 180, 1);
+            width: 100%;
+            display: block;
+            height: 230px;
+            position: relative;
+            &::after{
+                @include adaptiv-value('border-radius', 20, 10, 1);
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+}

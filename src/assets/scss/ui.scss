@@ -129,3 +129,53 @@ form {
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
+.masonry{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+    @include adaptiv-value('grid-gap', 20, 10, 1);
+    @media (max-width: $mobileMedium) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $mobileSmall) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    &__item{
+        &:nth-child(5n+1){
+            grid-column: 2 span;
+            @media (max-width: $mobileMedium) {
+                grid-column: 1 span;
+            }
+        }
+        &:nth-child(5n+2){
+            grid-column: 2 span;
+            @media (max-width: $mobileMedium) {
+                grid-column: 1 span;
+            }
+        }
+        &:nth-child(5n+3){
+            grid-column: 2 span;
+            @media (max-width: $mobileMedium) {
+                grid-column: 1 span;
+            }
+        }
+        &:nth-child(5n+4){
+            grid-column: 3 span;
+            @media (max-width: $mobileMedium) {
+                grid-column: 1 span;
+            }
+        }
+        &:nth-child(5n+5){
+            grid-column: 3 span;
+            @media (max-width: $mobileMedium) {
+                grid-column: 1 span;
+            }
+        }
+        &:last-child{
+            @media (max-width: $mobileMedium) {
+                display: none !important;
+            }
+        }
+    }
+}

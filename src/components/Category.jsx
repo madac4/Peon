@@ -1,21 +1,10 @@
-import React from 'react';
-import SingleCategory from './SingleCategory';
-import { categories } from '../data/categories';
+import React from 'react'
 
-function Category() {
+function Category({ category }) {
     return (
-        <section className='category'>
-            <div className="category__container">
-                <h2>Top Categorii</h2>
-                <div className="category__body category-body">
-                    {
-                        categories.map((category => (
-                            <SingleCategory category={category} />
-                        )))
-                    }
-                </div>
-            </div>
-        </section>
+        <a href='/' key={category.id} className='category-body__category' style={{ background: `url("${category.image}") 50% 50% / cover no-repeat` }}>
+            <h3>{category.name}</h3>
+        </a>
     )
 }
 
