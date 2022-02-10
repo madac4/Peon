@@ -1,0 +1,126 @@
+h1 {
+    @include adaptiv-value('font-size', 28, 26, 1);
+    line-height: 140%;
+}
+
+h2 {
+    @include adaptiv-value('font-size', 26, 24, 1);
+    line-height: 140%;
+}
+
+h3 {
+    @include adaptiv-value('font-size', 24, 22, 1);
+    line-height: 140%;
+}
+
+h4 {
+    @include adaptiv-value('font-size', 22, 20, 1);
+    line-height: 140%;
+}
+
+h5 {
+    @include adaptiv-value('font-size', 20, 18, 1);
+    line-height: 140%;
+}
+
+h6 {
+    @include adaptiv-value('font-size', 18, 16, 1);
+    line-height: 140%;
+}
+
+p {
+    font-size: 14px;
+    line-height: 160%;
+}
+
+.big {
+    @include adaptiv-value('font-size', 16, 14, 1);
+    line-height: 160%;
+}
+
+.medium {
+    font-weight: medium;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    background-color: #6C4FE1;
+    transition: .3s;
+    font-weight: 500;
+    font-size: 16px;
+    color: $lightcolor;
+    border-radius: 4px;
+    &:hover {
+        background-color: darken($color: #6C4FE1, $amount: 8);
+    }
+}
+
+.burger {
+    display: block;
+    position: relative;
+    min-width: 40px;
+    height: 32px;
+    cursor: pointer;
+    z-index: 5;
+    span,
+    &::before,
+    &::after {
+        content: '';
+        transition: all .3s ease 0s;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: $accentcolor;
+        border-radius: 4px;
+    }
+    &::before {
+        top: 4px;
+    }
+    &::after {
+        bottom: 4px;
+    }
+    span {
+        top: calc(50% - 2px);
+    }
+    &.active {
+        span {
+            transform: scale(0);
+        }
+        &::before {
+            transform: rotate(-45deg);
+            top: calc(50% - 1px);
+        }
+        &::after {
+            transform: rotate(45deg);
+            top: calc(50% - 1px);
+        }
+    }
+}
+
+form {
+    input,
+    textarea {
+        width: 100%;
+        border: 1px solid #718093;
+        border-radius: 8px;
+        transition: .3s;
+        outline: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        &:focus {
+            border: 1px solid $accentcolor;
+        }
+    }
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'icomoon';
+    // src: url('fonts/icomoon.eot?aef8go');
+    src: url('../fonts/icomoon.woff') format('woff'), url('../fonts/icomoon.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+    content: "\e900";
+}
+
+.icon-card:before {
+    content: "\e902";
+}
+
+.icon-delete:before {
+    content: "\e906";
+}
+
+.icon-minus:before {
+    content: "\e90a";
+}
+
+.icon-calendar:before {
+    content: "\e901";
+}
+
+.icon-cart:before {
+    content: "\e903";
+}
+
+.icon-check:before {
+    content: "\e904";
+}
+
+.icon-chevron__right:before {
+    content: "\e905";
+}
+
+.icon-chevron__left:before {
+    display: inline-block;
+    transform: rotate(180deg);
+    content: "\e905";
+}
+
+.icon-chevron__up:before {
+    display: inline-block;
+    transform: rotate(-90deg);
+    content: "\e905";
+}
+
+.icon-chevron__down:before {
+    display: inline-block;
+    transform: rotate(90deg);
+    content: "\e905";
+}
+
+.icon-favorite:before {
+    content: "\e907";
+}
+
+.icon-info:before {
+    content: "\e908";
+}
+
+.icon-lock:before {
+    content: "\e909";
+}
+
+.icon-profile:before {
+    content: "\e90b";
+}
+
+.icon-search:before {
+    content: "\e90c";
+}
+
+.icon-star__filled:before {
+    content: "\e90d";
+}
+
+.icon-star:before {
+    content: "\e90e";
+}
