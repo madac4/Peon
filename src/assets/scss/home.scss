@@ -147,7 +147,6 @@
 }
 
 .brands{
-    &__container{}
     &__body{
         .brands-body__item{
             @include adaptiv-value('border-radius', 20, 10, 1);
@@ -156,12 +155,43 @@
             display: block;
             height: 230px;
             position: relative;
+            display: flex;
+            align-items: center;
+            transition: .3s;
+            justify-content: center;
+            &:hover{
+                transform: scale(1.03);
+                h3{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                &::after{
+                    opacity: .5;
+                }
+            }
             &::after{
                 @include adaptiv-value('border-radius', 20, 10, 1);
                 content: '';
                 position: absolute;
                 inset: 0;
-                background-color: rgba(0, 0, 0, 0.4);
+                opacity: .2;
+                background-color: #000;
+                transition: .3s;
+                @media (max-width: $tablet) {
+                    opacity: .5;
+                }
+            }
+            h3{
+                position: relative;
+                z-index: 2;
+                opacity: 0;
+                transform: translateY(-30px);
+                transition: .3s;
+                color: $lightcolor;
+                @media (max-width: $tablet) {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
             }
         }
     }

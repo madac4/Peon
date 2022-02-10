@@ -10,7 +10,7 @@ function Home() {
             <Slider></Slider>
             <Categories></Categories>
             <Brands></Brands>
-            <Watched></Watched>
+            {/* <Watched></Watched> */}
         </div>
     )
 }
