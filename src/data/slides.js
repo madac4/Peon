@@ -17,4 +17,4 @@ export const slides = [
         title: 'Lorem ipsum dolor sit amet lorem ipsum',
         text: 'Lorem ipsum dolor sit, adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel',
     },
-]
+];

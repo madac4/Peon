@@ -41,7 +41,12 @@ p {
 .medium {
     font-weight: medium;
 }
-
+section{
+    margin-top: 100px;
+    h2{
+        @include adaptiv-value('margin-bottom', 30, 20, 1);
+    }
+}
 .button {
     display: block;
     width: 100%;
