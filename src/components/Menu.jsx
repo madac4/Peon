@@ -11,7 +11,7 @@ function Menu({ isOpen }) {
                 onClick={() => { goToMenu && setActiveMenu(goToMenu) }}
                 className='big'
             >
-                <a href="#">
+                <a href="#0">
                     {back ? <span className='icon-chevron__left'></span> : ''} {icon ? <img src={icon} alt="#" /> : ''} {name} {chevron ? <span className='icon-chevron__right'></span> : ''}
                 </a>
             </li>
