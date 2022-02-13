@@ -1,0 +1,33 @@
+.breadcrumbs{
+    ul{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        li{
+            position: relative;
+            &:not(:last-child)::after{
+                font-family: 'icomoon';
+                content: '\e905';
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: -17px;
+                color: $bluecolor;
+            }
+            &.current{
+                a{
+                    color: $maincolor;
+                    pointer-events: none;
+                }
+            }
+            a{
+                color: $bluecolor;
+                transition: .3s;
+                &:hover{
+                    color: $maincolor;
+
+                }
+            }
+        }
+    }
+}

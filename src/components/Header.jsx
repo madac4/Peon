@@ -2,10 +2,12 @@ import React from 'react'
 import logo from '../assets/img/logo.svg';
 import logoMobile from '../assets/img/logo-mobile.svg';
 import Menu from './Menu'
+import { Link } from 'react-router-dom';
 
 function Header() {
     const [open, setOpen] = React.useState(false);
     const overlayRef = React.useRef();
+
     const toggleMenu = () => {
         setOpen(!open);
     };
@@ -50,13 +52,12 @@ function Header() {
                     <Menu isOpen={open}></Menu>
 
                     <div className="lower-header__logo">
-                        <a className="desk-logo" href="/">
-                            <img src={logo} alt=""></img>
-                        </a>
-                        <a className="mobile-logo" href="/">
-                            <img src={logoMobile} alt=""></img>
-                            {/* <img src="@img/logo-mobile.svg" alt=""> */}
-                        </a>
+                        <Link to='/' className="desk-logo">
+                            <img src={logo} alt="" />
+                        </Link>
+                        <Link to='/' className="mobile-logo">
+                            <img src={logoMobile} alt="" />
+                        </Link>
                     </div>
 
                     <div className="lower-header__search header-search">
@@ -75,14 +76,14 @@ function Header() {
                     </div>
 
                     <div className="lower-header__buttons header-buttons">
-                        <a href="/" className="header-buttons__cart header-button">
+                        <Link to="/cart" className="header-buttons__cart header-button">
                             <span className="icon-cart"></span>
                             <sub>3</sub>
-                        </a>
-                        <a href="/" className="header-buttons__favorites header-button">
+                        </Link>
+                        <Link to="/favorite" className="header-buttons__favorites header-button">
                             <span className="icon-favorite"></span>
                             <sub>3</sub>
-                        </a>
+                        </Link>
                         <a href="/" className="header-buttons__profile header-button">
                             <span className="icon-profile"></span>
                         </a>

@@ -107,5 +107,8 @@ $mobileSmall: 479.98px;
 @import 'components/footer.scss';
 @import 'components/menu.scss';
 @import 'components/header.scss';
+@import 'components/breadcrumbs.scss';
+@import 'components/pageTitle.scss';
 // Conectarea stilurilor pentru pagini
 @import 'home';
+@import 'category';

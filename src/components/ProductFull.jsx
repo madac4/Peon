@@ -1,6 +1,11 @@
 import React from 'react'
 
 function ProductFull({ product }) {
+    let rating = []
+    for (let i = 0; i < product.rating; i++) {
+        rating.push(<span key={i} className="icon-star__filled"></span>)
+    }
+
     return (
         <div className='product product-big'>
             <div className="product-image">
@@ -8,8 +13,8 @@ function ProductFull({ product }) {
             </div>
             <div className="product-big__meta product-meta">
                 <div className="product-meta__price">
-                    <h6 className='price'>2699 MDL</h6>
-                    <span className="old-price">2999 MDL</span>
+                    <h6 className='price'>{product.price ? product.price + " MDL" : ''}</h6>
+                    <span className="old-price">{product.sellerPrice ? product.sellerPrice + " MDL" : ''}</span>
                 </div>
                 <div className="discount">-10%</div>
             </div>
@@ -20,11 +25,7 @@ function ProductFull({ product }) {
             </div>
 
             <div className="product-review">
-                <span className="icon-star__filled"></span>
-                <span className="icon-star__filled"></span>
-                <span className="icon-star__filled"></span>
-                <span className="icon-star__filled"></span>
-                <span className="icon-star"></span>
+                {rating}
                 <small>1824</small>
             </div>
 

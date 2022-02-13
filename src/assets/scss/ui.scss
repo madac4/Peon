@@ -405,3 +405,12 @@ form {
         visibility: visible;
     }
 }
+
+
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-bottom: 50px;
+    margin-top: 20px;
+    gap: 20px;
+}

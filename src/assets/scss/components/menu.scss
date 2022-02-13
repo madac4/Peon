@@ -31,13 +31,17 @@
             background-color: #fff;
             transition: .3s;
             cursor: pointer;
+            width: 100%;
             img{
                 width: 24px;
                 height: 24px;
             }
             span{
-                display: block;
-                margin-left: auto;
+                display: flex;
+                justify-content: flex-end;
+                &.icon-chevron__right{
+                    flex: 1;
+                }
                 &.icon-chevron__left{
                     margin-left: 0;
                 }

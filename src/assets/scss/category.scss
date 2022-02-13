@@ -1,0 +1,10 @@
+.category-page{
+    &__body{
+        display: grid;
+        grid-template-columns: minmax(200px, 340px) 1fr;
+        gap: 20px;
+    }
+    &__products{
+
+    }
+}

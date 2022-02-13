@@ -1,0 +1,12 @@
+.page-title{
+    background-color: $lightcolor;
+    margin-bottom: 50px;
+    @include adaptiv-value('padding-top', 60, 40, 1);
+    @include adaptiv-value('padding-bottom', 60, 40, 1);
+    &__container{
+        h1{
+            margin-bottom: 20px;
+        }
+    }
+}
+
