@@ -1,5 +1,5 @@
 .footer{
-    margin-top: 200px;
+    @include adaptiv-value('margin-top', 200, 100, 1);
     padding: 40px;
     background-color: $lightcolor;
     &__copyrights{

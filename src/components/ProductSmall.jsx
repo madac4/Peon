@@ -2,7 +2,7 @@ import React from 'react';
 
 function ProductSmall({ product }) {
     return (
-        <a href='/' className='product product-small'>
+        <div className='product product-small'>
             <div className="product-image">
                 <img src={product.image} alt={product.name} />
             </div>
@@ -16,10 +16,10 @@ function ProductSmall({ product }) {
 
             <div className="product-small__info product-info">
                 <a href='/' className="product-info__brand">{product.brand}</a>
-                <p className="product-info__name big">{product.name}</p>
+                <a href='/' className="product-info__name big">{product.name}</a>
             </div>
 
-        </a>
+        </div>
     )
 }
 

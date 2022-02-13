@@ -2,7 +2,7 @@ import React from 'react'
 
 function ProductFull({ product }) {
     return (
-        <a href='/' className='product product-big'>
+        <div className='product product-big'>
             <div className="product-image">
                 <img src={product.image} alt={product.name} />
             </div>
@@ -16,7 +16,7 @@ function ProductFull({ product }) {
 
             <div className="product-big__info product-info">
                 <a href='/' className="product-info__brand">{product.brand}</a>
-                <p className="product-info__name big">{product.name}</p>
+                <a href='/' className="product-info__name big">{product.name}</a>
             </div>
 
             <div className="product-review">
@@ -33,7 +33,7 @@ function ProductFull({ product }) {
 
                 <button className="product-controls__fav icon-favorite added"></button>
             </div>
-        </a>
+        </div>
     )
 }
 

@@ -259,13 +259,25 @@ form {
         display: flex;
         align-items: flex-start;
         gap: 5px;
-        a{
+        .product-info__brand{
+            position: relative;
+            z-index: 3;
             @include adaptiv-value('font-size', 18, 16, 1);
             line-height: 140%;
+            font-weight: 500;
         }
-        p{
+        .product-info__name{
             font-weight: 500;
             color: $bluecolor;
+            display: block;
+            &::after{
+                content: '';
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+            }
         }
     }
     .product-big__info{
@@ -288,6 +300,8 @@ form {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+        z-index: 3;
         opacity: 0;
         visibility: hidden;
         transform: translateY(30px);
@@ -371,4 +385,23 @@ form {
     background-color: $lightcolor;
     text-align: center;
     margin-bottom: 40px;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    &.open{
+        opacity: 1;
+        visibility: visible;
+    }
 }

@@ -22,7 +22,6 @@ function Slider() {
                     effect={"creative"}
                     pagination={pagination}
                     navigation={true}
-                    clickable={true}
                     speed={800}
                     creativeEffect={{
                         prev: {

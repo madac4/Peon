@@ -1,8 +1,26 @@
 import React from 'react'
 import logo from '../assets/img/logo.svg';
 import logoMobile from '../assets/img/logo-mobile.svg';
+import Menu from './Menu'
 
 function Header() {
+    const [open, setOpen] = React.useState(false);
+    const overlayRef = React.useRef();
+    const toggleMenu = () => {
+        setOpen(!open);
+    };
+
+    const outsideClick = (event) => {
+        const path = event.path || (event.composedPath && event.composedPath());
+        if (path.includes(overlayRef.current)) {
+            setOpen(false);
+        }
+    };
+
+    React.useEffect(() => {
+        document.body.addEventListener('click', outsideClick);
+    });
+
     return (
         <header className="header">
             <div className="header__upper upper-header">
@@ -25,9 +43,11 @@ function Header() {
 
             <div className="header__lower lower-header">
                 <div className="lower-header__container">
-                    <button type="button" className="burger">
+                    <button type="button" className={open ? 'burger active' : 'burger'} onClick={toggleMenu}>
                         <span></span>
                     </button>
+
+                    <Menu isOpen={open}></Menu>
 
                     <div className="lower-header__logo">
                         <a className="desk-logo" href="/">
@@ -69,6 +89,8 @@ function Header() {
                     </div>
                 </div>
             </div>
+
+            <div ref={overlayRef} className={open ? 'overlay open' : 'overlay'}></div>
         </header>
     );
 }
