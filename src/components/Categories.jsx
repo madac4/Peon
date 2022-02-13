@@ -7,10 +7,10 @@ function Categories() {
         <section className='category'>
             <div className="category__container">
                 <h2>Top Categorii</h2>
-                <div className="category__body category-body">
+                <div className="category__body category-body d-grid-4">
                     {
                         categories.map((category => (
-                            <Category category={category} />
+                            <Category category={category} key={category.id} />
                         )))
                     }
                 </div>

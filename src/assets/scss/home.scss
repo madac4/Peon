@@ -84,15 +84,7 @@
 
 .category{
     &__body{
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        @include adaptiv-value('gap', 20, 10, 1);
-        @media (max-width: $tablet) {
-            grid-template-columns: repeat(2,1fr);
-        }
-        @media (max-width: $mobileMedium) {
-            grid-template-columns: repeat(1,1fr);
-        }
+        
         .category-body__category{
             width: 100%;
             padding: 45% 0;
@@ -194,5 +186,12 @@
                 }
             }
         }
+    }
+}
+
+.watched{
+    &__container{}
+    &__body{
+        
     }
 }

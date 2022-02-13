@@ -9,7 +9,7 @@ function Brands() {
                 <h2>Top Brands</h2>
                 <div className="brands__body brands-body masonry">
                     {brands.map((brand) => (
-                        <Brand brand={brand}></Brand>
+                        <Brand brand={brand} key={brand.id} />
                     ))}
                 </div>
             </div>
