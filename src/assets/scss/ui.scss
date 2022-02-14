@@ -105,7 +105,7 @@ section{
     }
 }
 
-form {
+form, .input-group {
     input,
     textarea {
         width: 100%;
@@ -379,14 +379,6 @@ form {
     }
 }
 
-.offer-banner{
-    @include adaptiv-value('margin-top', 100, 80, 1);
-    padding: 22px 15px;
-    background-color: $lightcolor;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
 .overlay{
     position: fixed;
     top: 0;
@@ -409,7 +401,8 @@ form {
 
 .product-grid{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    // grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     margin-bottom: 50px;
     margin-top: 20px;
     gap: 20px;

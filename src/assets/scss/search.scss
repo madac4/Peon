@@ -1,0 +1,15 @@
+.search-results{
+    margin-top: 50px;
+    &__header{
+        margin-bottom: 40px;
+    }
+    &__container{
+        h1{
+            margin-bottom: 10px;
+        }
+        .search-results__info{
+            font-size: 18px;
+            font-weight: normal;
+        }
+    }
+}

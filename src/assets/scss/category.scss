@@ -1,48 +1,12 @@
 .category-page{
     &__body{
         display: grid;
-        grid-template-columns: minmax(200px, 340px) 1fr;
-        gap: 20px;
-    }
-    &__products{
-
-    }
-}
-
-.sort{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    &__title{
-        color: $graycolor;
-    }
-    &__list{
-        flex: 1;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        li{
-            .sort-button{
-                transition: .3s;
-                &:hover{
-                    color: $accentcolor;
-                }
-                &--active{
-                    font-weight: 500;
-                    color: $accentcolor;
-                }
-            }
+        grid-template-columns: minmax(240px, 340px) 1fr;
+        gap: 40px;
+        @media (max-width: $mobile) {
+            grid-template-columns: 1fr;
         }
     }
-    &__result{
-        span{
-            color: $accentcolor;
-            margin-right: 5px;
-            font-weight: 500;
-        }
-        color: $graycolor;
-    }
-
 }
 
 .filter{
@@ -54,6 +18,9 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            &:not(:last-child){
+                margin-bottom: 30px;
+            }
             .filter-group__option{
                 label{
                     cursor: pointer;
@@ -89,6 +56,11 @@
                             color: $accentcolor;
                           }
                       }
+                      .color{
+                          width: 18px;
+                          height: 18px;
+                          border-radius: 50%;
+                      }
                       .items{
                           margin-left: auto;
                           color: $bluecolor;
@@ -105,4 +77,45 @@
             }
         }
     }
+}
+
+
+.noUi-connect{
+    background: $accentcolor !important;
+}
+
+.noUi-horizontal{
+    height: 2px !important;
+}
+
+.noUi-target{
+    border: none !important;
+    background-color: $graycolor !important;
+    box-shadow: none !important;
+}
+
+.noUi-touch-area{
+    background-color: $accentcolor;
+    border-radius: 50% !important;
+}
+
+
+.noUi-horizontal .noUi-handle{
+    width: 18px !important;
+    height: 18px !important;
+    border: none !important;
+    transform: translateY(-2px);
+    right: -9px !important;
+}
+
+.noUi-handle:before, .noUi-handle:after{
+    display: none !important;
+}
+
+.input-group{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 20px;
 }

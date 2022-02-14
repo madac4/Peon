@@ -1,0 +1,30 @@
+@import '../../assets/scss/variables';
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    li{
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            height: 45px;
+            border-radius: 4px;
+            color: $bluecolor;
+            background-color: #f1f1f1;
+            transition: .3s;
+            &.active{
+                color: $lightcolor;
+                background-color: $accentcolor;
+            }
+            &:hover{
+                background-color: $accentcolor;
+                color: $lightcolor;
+            }
+        }
+    }
+}

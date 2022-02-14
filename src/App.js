@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Favorite from './pages/Favorite'
 import Category from './pages/Category';
+import Search from './pages/Search';
 function App() {
     return (
         <div className='wrapper'>
@@ -16,6 +17,7 @@ function App() {
                     <Route element={<Cart />} path="/cart" exact />
                     <Route element={<Favorite />} path="/favorite" exact />
                     <Route element={<Category />} path="/category" exact />
+                    <Route element={<Search />} path="/search" exact />
                 </Routes>
             </main>
             <Footer></Footer>

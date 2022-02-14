@@ -1,0 +1,9 @@
+@import '../../assets//scss/base/mixin';
+@import '../../assets//scss/variables';
+.offerBanner{
+    @include adaptiv-value('margin-top', 100, 80, 1);
+    padding: 22px 15px;
+    background-color: $lightcolor;
+    text-align: center;
+    margin-bottom: 40px;
+}

@@ -1,0 +1,16 @@
+.favorite-page{
+    margin-top: 50px;
+    &__container{
+
+    }
+    &__header{
+        margin-bottom: 40px;
+        h2{
+            margin-bottom: 10px;
+        }
+        p{
+            color: $bluecolor;
+        }
+    }
+    &__body{}
+}
