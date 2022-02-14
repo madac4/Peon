@@ -25,7 +25,6 @@ function Sort({ options }) {
         setActiveSort(index)
         setVisibleSort(false);
     };
-    console.log(styles);
     return (
         <div className={styles.sort}>
             <span className={styles.sort__title}>Sortează după:</span>

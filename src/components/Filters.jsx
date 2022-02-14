@@ -120,7 +120,6 @@ function Filters() {
                         </label>
                     </div>
 
-
                     <button className="filter-group__more big">Show All (24)</button>
                 </div>
             </div>

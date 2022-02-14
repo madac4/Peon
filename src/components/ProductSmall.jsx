@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 function ProductSmall({ product }) {
     return (
@@ -15,8 +16,8 @@ function ProductSmall({ product }) {
             </div>
 
             <div className="product-small__info product-info">
-                <a href='/' className="product-info__brand">{product.brand}</a>
-                <a href='/' className="product-info__name big">{product.name}</a>
+                <Link to='/category' className="product-info__brand">{product.brand}</Link>
+                <Link to='/product' className="product-info__name big">{product.name}</Link>
             </div>
 
         </div>
