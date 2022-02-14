@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Category({ category }) {
     return (
-        <a href='/' className='category-body__category' style={{ background: `url("${category.image}") 50% 50% / cover no-repeat` }}>
+        <Link to='/category' className='category-body__category' style={{ background: `url("${category.image}") 50% 50% / cover no-repeat` }}>
             <h3>{category.name}</h3>
-        </a>
+        </Link>
     )
 }
 
