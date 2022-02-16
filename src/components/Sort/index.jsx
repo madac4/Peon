@@ -4,6 +4,7 @@ import styles from './Sort.module.scss'
 function Sort({ options }) {
     const [visibleSort, setVisibleSort] = React.useState(false);
     const [activeSort, setActiveSort] = React.useState(0)
+
     const sortRef = React.useRef();
     const currentOption = options.find((obj, i) => i === activeSort).name;
     const outsideClick = (event) => {
