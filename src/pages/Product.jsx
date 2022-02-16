@@ -1,11 +1,13 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Thumbs, EffectCreative } from "swiper";
+import { Thumbs, EffectCreative, Navigation } from "swiper";
 
 import ProductSmall from '../components/ProductSmall'
+import ProductFull from '../components/ProductFull'
 import Breadcrumbs from '../components/Breadcrumbs'
 
 import { productsSmall } from '../data/productsSmall';
+import { products } from '../data/products';
 import { images } from '../data/singleProduct';
 
 import "swiper/css";
@@ -23,11 +25,10 @@ function Product() {
                 <div className="page-product__container">
                     <Breadcrumbs></Breadcrumbs>
 
-                    <div className="page-product__product product-info">
-                        <div className="product-info__presentation">
+                    <div className="page-product__product product-main">
+                        <div className="product-main__presentation">
                             <Swiper
                                 onSwiper={setThumbsSwiper}
-                                // loop={true}
                                 breakpoints={{
                                     768: {
                                         direction: "vertical"
@@ -46,7 +47,6 @@ function Product() {
                                 ))}
                             </Swiper>
                             <Swiper
-                                // loop={true}
                                 effect={"creative"}
                                 breakpoints={{
                                     768: {
@@ -76,7 +76,7 @@ function Product() {
                             </Swiper>
                         </div>
 
-                        <div className="product-info__information">
+                        <div className="product-main__information">
                             <h4>Căști Apple AirPods Max Silver</h4>
                             <div className="single-features">
                                 <div className="single-features__rating">
@@ -112,6 +112,46 @@ function Product() {
                         </div>
 
                     </div>
+                    <div className="product-main__description product-section">
+                        <h5>Descriere</h5>
+                        <p className="big">Introducing AirPods Max — a perfect balance of exhilarating high-fidelity audio and the effortless magic of AirPods. The ultimate personal listening experience is here. The over-ear headphone has been completely reimagined. From cushion to canopy, AirPods Max are designed for an uncompromising fit that creates the optimal acoustic seal for many different head shapes — fully immersing you in every sound.</p>
+                    </div>
+
+                    <div className="product-main__related product-section">
+                        <h5>Produse asemanatoare</h5>
+                        <Swiper
+                            spaceBetween={20}
+                            breakpoints={{
+                                320: {
+                                    slidesPerView: 1
+                                },
+                                530: {
+                                    slidesPerView: 2
+                                },
+                                840: {
+                                    slidesPerView: 3
+                                },
+                                1120: {
+                                    slidesPerView: 4
+                                },
+                            }}
+                            watchSlidesProgress={true}
+                            navigation={true}
+                            modules={[Navigation]}
+                            className="product-related"
+                        >
+                            {products.map((product, i) => (
+                                <SwiperSlide key={`${product.id}_${i}`}>
+                                    <ProductFull product={product} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+
+                    {/* <div className="product-main__comments product-section">
+                        <h5>Recenzii</h5>
+                        
+                    </div> */}
                 </div>
             </div>
 

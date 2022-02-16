@@ -12,5 +12,23 @@
             color: $bluecolor;
         }
     }
-    &__body{}
+    &__body{
+        &.fav-empty{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+            text-align: center;
+            margin: 0 auto;
+            @include adaptiv-value('padding-top', 50, 20, 1);
+            img{
+                margin-bottom: 30px;
+                @media (max-width: $mobileSmall) {
+                    width: 80%;
+                    margin: 30px auto;
+                }
+            }
+        }
+    }
 }

@@ -107,7 +107,7 @@ section{
 
 form, .input-group {
     input,
-    textarea {
+    textarea, select {
         width: 100%;
         border: 1px solid #718093;
         border-radius: 8px;
@@ -118,6 +118,13 @@ form, .input-group {
         &:focus {
             border: 1px solid $accentcolor;
         }
+    }
+    select{
+        appearance: none;
+        opacity: 0.3;
+        user-select: none;
+        background-color: $lightcolor;
+        pointer-events: none;
     }
 }
 
@@ -406,4 +413,8 @@ form, .input-group {
     margin-bottom: 50px;
     margin-top: 20px;
     gap: 20px;
+}
+
+form small.error{
+    color: $redcolor;
 }
