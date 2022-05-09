@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Category({ category }) {
     return (
-        <Link to='/category' className='category-body__category' style={{ background: `url("${category.image}") 50% 50% / cover no-repeat` }}>
+        <Link to={`/products/${category.slug}`} className='category-body__category' style={{ background: `url("${category.image}") 50% 50% / cover no-repeat` }}>
             <h3>{category.name}</h3>
         </Link>
     )

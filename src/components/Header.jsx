@@ -1,15 +1,28 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux'
+import Menu from './Menu'
+
 import logo from '../assets/img/logo.svg';
 import logoMobile from '../assets/img/logo-mobile.svg';
-import Menu from './Menu'
-import { Link } from 'react-router-dom';
 
 function Header() {
     const [open, setOpen] = React.useState(false);
+    const [search, setsearch] = React.useState('');
+    const user = useSelector(state => state.user);
     const overlayRef = React.useRef();
+    const cartQuantity = useSelector(state => state.cart.quantity);
+    const favQuantity = useSelector(state => state.favorite.products);
+
+    const handleChange = e => {
+        setsearch(e.target.value);
+      };
 
     const toggleMenu = () => {
         setOpen(!open);
+    };
+
+    const toggleModal = () => {
     };
 
     const outsideClick = (event) => {
@@ -35,10 +48,17 @@ function Header() {
                         <a className="big medium" href="/">Achitare</a>
                     </nav>
                     <div className="upper-header__profile header-profile">
-                        <button type="button" className="header-profile__auth">
-                            <span className="icon-profile"></span>
-                            <p className="big">Intra in cont</p>
-                        </button>
+                        {user.currentUser ?
+                            <Link to="/" className="header-profile__auth" onClick={toggleModal}>
+                                <span className="icon-profile"></span>
+                                <p className="big">{user.currentUser.username}</p>
+                            </Link>
+                            :
+                            <Link to={'/login'} className="header-profile__auth" onClick={toggleModal}>
+                                <span className="icon-profile"></span>
+                                <p className="big">Intra in cont</p>
+                            </Link>
+                        }
                     </div>
                 </div>
             </div>
@@ -62,7 +82,7 @@ function Header() {
 
                     <div className="lower-header__search header-search">
                         <form action="#" className="header-search__form">
-                            <input placeholder="Search..." type="text"></input>
+                            <input onChange={handleChange} value={search} placeholder="Search..." type="text"></input>
                             <button className="icon-search"></button>
                         </form>
 
@@ -78,11 +98,11 @@ function Header() {
                     <div className="lower-header__buttons header-buttons">
                         <Link to="/cart" className="header-buttons__cart header-button">
                             <span className="icon-cart"></span>
-                            <sub>3</sub>
+                            <sub className={cartQuantity > 0 ? 'active' : ''}>{cartQuantity}</sub>
                         </Link>
                         <Link to="/favorite" className="header-buttons__favorites header-button">
                             <span className="icon-favorite"></span>
-                            <sub>3</sub>
+                            <sub className={favQuantity.length > 0 ? 'active' : ''}>{favQuantity.length}</sub>
                         </Link>
                         <a href="/" className="header-buttons__profile header-button">
                             <span className="icon-profile"></span>

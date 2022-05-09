@@ -1,29 +1,38 @@
-.favorite-page{
+.favorite-page {
     margin-top: 50px;
-    &__container{
-
-    }
-    &__header{
+    &__header {
         margin-bottom: 40px;
-        h2{
+        h2 {
             margin-bottom: 10px;
         }
-        p{
+        p {
             color: $bluecolor;
         }
     }
-    &__body{
-        &.fav-empty{
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px 20px;
+        @media (max-width: $tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media (max-width: $mobile) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: $mobileSmall) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &.fav-empty {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            max-width: 600px;
+            max-width: 500px;
             text-align: center;
             margin: 0 auto;
             @include adaptiv-value('padding-top', 50, 20, 1);
-            img{
-                margin-bottom: 30px;
+            img {
+                width: 50%;
                 @media (max-width: $mobileSmall) {
                     width: 80%;
                     margin: 30px auto;

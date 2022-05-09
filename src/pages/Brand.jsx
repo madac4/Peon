@@ -4,7 +4,6 @@ import PageTitle from '../components/PageTitle'
 import Pagination from '../components/Pagination'
 import ProductGrid from '../components/ProductGrid'
 import NoUiSlider from '../components/NoUiSlider'
-import { brands } from '../data/brands'
 import { colors } from '../data/colors'
 
 const sortOptions = [
@@ -15,9 +14,9 @@ const sortOptions = [
     { name: 'Pret cresc.', type: 'price-low', order: 'asc' },
 ]
 
-function Category() {
+function Brand() {
     const location = useLocation();
-    const cat = location.pathname.split('/')[2];
+    const brand = location.pathname.split('/')[2];
 
     const [visibleSort, setVisibleSort] = React.useState(false);
     const [activeSort, setActiveSort] = React.useState('popular')
@@ -45,13 +44,11 @@ function Category() {
     };
 
     const [isChecked, setIsChecked] = React.useState({});
-
     const clearAll = () => {
         if (Object.keys(isChecked).length !== 0) {
             setIsChecked(false);
         }
     }
-
     const handleChecked = (e) => {
         const value = e.target.value.toLowerCase();
         setIsChecked({
@@ -59,7 +56,6 @@ function Category() {
             [e.target.name]: value,
         })
     }
-
     const showAll = (arr) => {
         if (arr.length >= 9) {
             const buttonNum = arr.length - 8;
@@ -69,14 +65,14 @@ function Category() {
     }
     return (
         <div className='category-page'>
-            <PageTitle title={cat.charAt(0).toUpperCase() + cat.slice(1)} />
+            <PageTitle title={brand.charAt(0).toUpperCase() + brand.slice(1)} />
 
             <div className="category-page__container">
                 <div className="category-page__body">
                     <aside className='filter'>
                         <div className="filter__group filter-group">
-                            <div className="filter-group__options">
-                                <h5>Brand</h5>
+                            {/* <div className="filter-group__options">
+                                <h5>Product Type</h5>
                                 {brands && brands.map((brand, i) => (
                                     <div key={`${brand.name}_${i}`} className="filter-group__option" >
                                         <label>
@@ -92,7 +88,7 @@ function Category() {
                                     </div>
                                 ))}
                                 {showAll(brands)}
-                            </div>
+                            </div> */}
 
                             <div className="filter-group__options">
                                 <h5>Cost</h5>
@@ -101,7 +97,7 @@ function Category() {
 
                             <div className="filter-group__options">
                                 <h5>Colors</h5>
-                                {colors && colors.map((color, i) => (
+                                {colors?.slice(0, 8).map((color, i) => (
                                     <div key={`${color.name}_${i}`} className="filter-group__option" >
                                         <label>
                                             <input
@@ -118,6 +114,7 @@ function Category() {
                                 ))}
                                 {showAll(colors)}
                             </div>
+
                             <button onClick={clearAll} className="filter-clear button button--outline">Curăță toate filtrele</button>
                         </div>
                     </aside >
@@ -126,7 +123,7 @@ function Category() {
                         <div className="sort">
                             <span className="sort__title">Sortează după:</span>
                             <ul className="sort__list">
-                                {sortOptions && sortOptions.map((option, i) => (
+                                {sortOptions?.map((option, i) => (
                                     <li
                                         key={`${option.type}_${i}`}
                                         className={activeSort === option.type ? 'current' : ''}
@@ -137,7 +134,7 @@ function Category() {
                             <div ref={sortRef} className="sort__list--mobile">
                                 <span onClick={toggleVisibleSort}>{currentOption}</span>
                                 <ul className={visibleSort ? 'open' : ''}>
-                                    {sortOptions && sortOptions.map((option, i) => (
+                                    {sortOptions?.map((option, i) => (
                                         <li
                                             key={`${option.type}_${i}`}
                                             className={activeSort === option.type ? 'current' : ''}
@@ -150,7 +147,7 @@ function Category() {
                             <p className="sort__result"><span>320</span>produse</p>
                         </div>
 
-                        <ProductGrid cat={cat} brand={false} sort={activeSort} filter={isChecked}></ProductGrid>
+                        <ProductGrid brand={brand} cat={false} sort={activeSort} filter={isChecked}></ProductGrid>
                         <Pagination></Pagination>
                     </div>
                 </div>
@@ -159,4 +156,4 @@ function Category() {
     )
 }
 
-export default Category
+export default Brand

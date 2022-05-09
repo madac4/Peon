@@ -1,0 +1,60 @@
+.authBody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-width: 400px;
+    padding: 0 15px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10%;
+    .authContent{
+        width: 100%;
+        h2{
+            margin-bottom: 20px;
+        }
+        p{
+            margin-bottom: 10px;
+        }
+        .buttonGroup{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 30px;
+            a{
+                font-size: 16px;
+                &.current{
+                    color: #6C4FE1;
+                }
+            }
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            
+            .formButtons{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                button{
+                    padding: 12px 0;
+                    max-width: 60%;
+                }
+            }
+        }
+    }
+}
+
+form{
+    width: 100%;
+}
+
+.error{
+    color: #E74C3C;
+    margin-bottom: 10px;
+    display: block;
+}

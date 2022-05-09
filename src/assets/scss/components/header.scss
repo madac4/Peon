@@ -110,6 +110,11 @@
                     border-radius: 50%;
                     bottom: 0;
                     right: -6px;
+                    transform: scale(0);
+                    transition: .3s;
+                    &.active{
+                        transform: scale(1);
+                    }
                 }
                 &__cart {}
                 &__favorites {}

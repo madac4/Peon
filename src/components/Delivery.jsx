@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-export default function App() {
+export default function Delivery() {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
 
@@ -26,7 +26,7 @@ export default function App() {
             </p>
             <legend className='big'>Adresa</legend>
             <p className='col-2'>
-                <input style={errors.address && errors.address.type === "required" && { borderColor: '#E74C3C', backgroundColor: '#f0897d50' }} type="text" placeholder="Strada, casa, apartamentul, s.a" {...register("address", { required: true, min: 2, maxLength: 30 })} />
+                <input style={errors.address && errors.address.type === "required" && { borderColor: '#E74C3C', backgroundColor: '#f0897d50' }} type="text" placeholder="Strada, casa, apartamentul, s.a" {...register("address", { required: true, min: 2, maxLength: 50 })} />
                 {errors.address && errors.address.type === "required" && <small className='error'>Acest camp este obligatoriu</small>}
             </p>
             <p>

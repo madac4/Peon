@@ -1,8 +1,11 @@
 .category-page{
     &__body{
         display: grid;
-        grid-template-columns: minmax(240px, 340px) 1fr;
+        grid-template-columns: 340px 1fr;
         gap: 40px;
+        @media (max-width: $tablet) {
+            grid-template-columns: 220px 1fr;
+        }
         @media (max-width: $mobile) {
             grid-template-columns: 1fr;
         }
@@ -10,6 +13,9 @@
 }
 
 .filter{
+    &-clear{
+        padding: 12px 0;
+    }
     &-group{
         h5{
             margin-bottom: 20px;
@@ -26,36 +32,61 @@
                     cursor: pointer;
                     display: flex;
                     align-items: center;
-                    gap: 10px;
-                    input[type="checkbox"] {
-                        clip: rect(0 0 0 0);
-                        clip-path: inset(50%);
-                        height: 1px;
-                        overflow: hidden;
-                        position: absolute;
-                        white-space: nowrap;
-                        width: 1px;
-                      }
-                    .checkbox {
-                        display: inline-block; // set to `inline-block` as `inline elements ignore `height` and `width`
-                        height: 20px;
-                        width: 20px;
-                        background: #fff;
-                        border: 2px $maincolor solid;
-                        border-radius: 4px;
-                      }
-                      
-                      .checkbox--active {
-                          position: relative;
-                          &::after{
-                            content: "\e904";
-                            font-family: 'icomoon';
-                            position: absolute;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            color: $accentcolor;
-                          }
-                      }
+                    gap: 5px;
+                    input[type="radio"]{
+                        appearance: none;
+                        background-color: #fff;
+                        margin: 0;
+                        color: $maincolor;
+                        border: 0.15em solid $maincolor;
+                        border-radius: 50%;
+                        width: 18px;
+                        height: 18px;
+                        transform: translateY(-0.075em);
+                        display: grid;
+                        place-content: center;
+                    }
+                    input[type="radio"]::before {
+                        content: "";
+                        width: 9px;
+                        height: 9px;
+                        border-radius: 50%;
+                        transform: scale(0);
+                        transition: 120ms transform ease-in-out;
+                        box-shadow: inset 1em 1em $accentcolor;
+                    }
+                    input[type="radio"]:checked::before {
+                    transform: scale(1);
+                    }
+                    // input[type="checkbox"] {
+                    //     clip: rect(0 0 0 0);
+                    //     clip-path: inset(50%);
+                    //     height: 1px;
+                    //     overflow: hidden;
+                    //     position: absolute;
+                    //     white-space: nowrap;
+                    //     width: 1px;
+                    //   }
+                    // .checkbox {
+                    //     display: inline-block; // set to `inline-block` as `inline elements ignore `height` and `width`
+                    //     height: 20px;
+                    //     width: 20px;
+                    //     background: #fff;
+                    //     border: 2px $maincolor solid;
+                    //     border-radius: 4px;
+                       
+                    //   }            
+                    //   .checkbox--active {
+                    //       position: relative;
+                    //       &::after{
+                    //         content: "\e904";
+                    //         font-family: 'icomoon';
+                    //         position: absolute;
+                    //         left: 50%;
+                    //         transform: translateX(-50%);
+                    //         color: $accentcolor;
+                    //       }
+                    //   }
                       .color{
                           width: 18px;
                           height: 18px;
