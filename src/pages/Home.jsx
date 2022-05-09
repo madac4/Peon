@@ -19,7 +19,7 @@ function Home() {
     React.useEffect(() => {
         const getProducts = async () => {
             try {
-                const res = await axios.get('http://localhost:8000/api/products');
+                const res = await axios.get('https://react-wild.herokuapp.com/api/products');
                 setProducts(res.data);
             } catch (error) {
                 console.log(error);
