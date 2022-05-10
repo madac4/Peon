@@ -99,7 +99,7 @@ function Header({isAuthentified}) {
                             <span className="icon-favorite"></span>
                             <sub className={favQuantity.length > 0 ? 'active' : ''}>{favQuantity.length}</sub>
                         </Link>
-                        <Link href="/authentication" className="header-buttons__profile header-button">
+                        <Link to="/authentication" className="header-buttons__profile header-button">
                             <span className="icon-profile"></span>
                         </Link>
                     </div>
