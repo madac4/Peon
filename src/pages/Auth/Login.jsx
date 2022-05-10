@@ -8,7 +8,6 @@ import styles from './Login.module.scss'
 // import { login } from '../../redux/api';
 
 function Login() {
-    const { currentUser, isFetching, error } = useSelector(state => state.user);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const dispatch = useDispatch();
     let navigate = useNavigate();
@@ -27,9 +26,9 @@ function Login() {
         <div className={styles.authBody}>
             <div className={styles.authContent}>
                 <h2>Login</h2>
-                {error &&
+                {/* {error &&
                     <span className={styles.error}>Ați introdus datele greșite</span>
-                }
+                } */}
                 <div className={styles.buttonGroup}>
                     <Link className={styles.current} to={'/login'}>Login</Link>
                     <Link to={'/register'}>Registreazate</Link>
