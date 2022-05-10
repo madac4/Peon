@@ -17,12 +17,12 @@ function Login() {
         const password = data.password;
         // login(dispatch, { email, password });
     }
-    const routeChange = () => {
-        if (currentUser !== null) {
-            let path = `/`;
-            navigate(path);
-        }
-    }
+    // const routeChange = () => {
+    //     if (currentUser !== null) {
+    //         let path = `/`;
+    //         navigate(path);
+    //     }
+    // }
     return (
         <div className={styles.authBody}>
             <div className={styles.authContent}>
