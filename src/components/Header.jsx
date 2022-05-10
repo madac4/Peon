@@ -1,27 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux'
+import { useSelector, connect } from 'react-redux'
 import Menu from './Menu'
 
 import logo from '../assets/img/logo.svg';
 import logoMobile from '../assets/img/logo-mobile.svg';
 
-function Header() {
+function Header({isAuthentified}) {
     const [open, setOpen] = React.useState(false);
     const [search, setsearch] = React.useState('');
     const overlayRef = React.useRef();
     const cartQuantity = useSelector(state => state.cart.quantity);
     const favQuantity = useSelector(state => state.favorite.products);
-
     const handleChange = e => {
         setsearch(e.target.value);
       };
 
     const toggleMenu = () => {
         setOpen(!open);
-    };
-
-    const toggleModal = () => {
     };
 
     const outsideClick = (event) => {
@@ -47,17 +43,17 @@ function Header() {
                         <a className="big medium" href="/">Achitare</a>
                     </nav>
                     <div className="upper-header__profile header-profile">
-                        {/* {user.currentUser ?
-                            <Link to="/" className="header-profile__auth" onClick={toggleModal}>
+                        {isAuthentified ?
+                            <Link to="/profile/user" className="header-profile__auth">
                                 <span className="icon-profile"></span>
-                                <p className="big">{user.currentUser.username}</p>
+                                <p className="big">username</p>
                             </Link>
                             :
-                        } */}
-                        <Link to={'/login'} className="header-profile__auth" onClick={toggleModal}>
-                            <span className="icon-profile"></span>
-                            <p className="big">Intra in cont</p>
-                        </Link>
+                            <Link to={'/authentication'} className="header-profile__auth">
+                                <span className="icon-profile"></span>
+                                <p className="big">Intra in cont</p>
+                            </Link>
+                        }
                     </div>
                 </div>
             </div>
@@ -109,10 +105,12 @@ function Header() {
                     </div>
                 </div>
             </div>
-
-            <div ref={overlayRef} className={open ? 'overlay open' : 'overlay'}></div>
         </header>
     );
 }
 
-export default Header;
+const mapStateToProps = (state) =>({
+    isAuthentified: state.auth.isAuth
+})
+
+export default connect(mapStateToProps)(Header);

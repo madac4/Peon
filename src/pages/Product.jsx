@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { publicRequest } from '../requestMethod';
+import { publicRequest } from '../helpers/requestMethod';
 import { addProduct } from '../redux/cart'
 
 import ProductSmall from '../components/ProductSmall'
