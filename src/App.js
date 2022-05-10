@@ -23,13 +23,6 @@ import Reset from './pages/Auth/Reset';
 import Register from './pages/Auth/Register';
 
 function App() {
-    const user = useSelector(state => state.user.currentUser);
-    let navigate = useNavigate();
-    React.useEffect(() => {
-        if (user) {
-            return navigate("/");
-        }
-    }, [user, navigate]);
     return (
         <div className='wrapper'>
             <ToastContainer>

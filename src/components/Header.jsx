@@ -9,7 +9,6 @@ import logoMobile from '../assets/img/logo-mobile.svg';
 function Header() {
     const [open, setOpen] = React.useState(false);
     const [search, setsearch] = React.useState('');
-    const user = useSelector(state => state.user);
     const overlayRef = React.useRef();
     const cartQuantity = useSelector(state => state.cart.quantity);
     const favQuantity = useSelector(state => state.favorite.products);
@@ -48,17 +47,17 @@ function Header() {
                         <a className="big medium" href="/">Achitare</a>
                     </nav>
                     <div className="upper-header__profile header-profile">
-                        {user.currentUser ?
+                        {/* {user.currentUser ?
                             <Link to="/" className="header-profile__auth" onClick={toggleModal}>
                                 <span className="icon-profile"></span>
                                 <p className="big">{user.currentUser.username}</p>
                             </Link>
                             :
-                            <Link to={'/login'} className="header-profile__auth" onClick={toggleModal}>
-                                <span className="icon-profile"></span>
-                                <p className="big">Intra in cont</p>
-                            </Link>
-                        }
+                        } */}
+                        <Link to={'/login'} className="header-profile__auth" onClick={toggleModal}>
+                            <span className="icon-profile"></span>
+                            <p className="big">Intra in cont</p>
+                        </Link>
                     </div>
                 </div>
             </div>

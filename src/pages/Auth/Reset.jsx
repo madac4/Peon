@@ -5,20 +5,18 @@ import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux';
 
-import { login } from '../../redux/api';
+// import { login } from '../../redux/api';
 function Reset() {
-    const { currentUser, isFetching, error } = useSelector(state => state.user);
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const dispatch = useDispatch();
     const onSubmit = data => {
         const email = data.email;
         const password = data.password;
-        login(dispatch, { email, password });
+        // login(dispatch, { email, password });
 
     }
     return (
         <div className={styles.authBody}>
-            <div className={styles.authContent}>
+            {/* <div className={styles.authContent}>
                 <h2>Resetarea Parolei</h2>
                 <p>
                     Inrodu adresa de email pentru a reseta parola
@@ -32,7 +30,7 @@ function Reset() {
                         <button className="button" disabled={isFetching}>Trimite Confirmarea</button>
                     </div>
                 </form>
-            </div>
+            </div> */}
         </div>
     )
 }

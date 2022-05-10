@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux';
 
 import styles from './Login.module.scss'
-import { login } from '../../redux/api';
+// import { login } from '../../redux/api';
 
 function Login() {
     const { currentUser, isFetching, error } = useSelector(state => state.user);
@@ -15,7 +15,7 @@ function Login() {
     const onSubmit = data => {
         const email = data.email;
         const password = data.password;
-        login(dispatch, { email, password });
+        // login(dispatch, { email, password });
     }
     const routeChange = () => {
         if (currentUser !== null) {
@@ -34,7 +34,7 @@ function Login() {
                     <Link className={styles.current} to={'/login'}>Login</Link>
                     <Link to={'/register'}>Registreazate</Link>
                 </div>
-                <form id={styles.authForm} onSubmit={handleSubmit(onSubmit)}>
+                {/* <form id={styles.authForm} onSubmit={handleSubmit(onSubmit)}>
                     <p>
                         <input autoComplete='email' type="email" placeholder="E-mail" {...register("email", { required: true, min: 3 })} />
                         {errors.email && errors.email.type === "required" && <small className='error'>Acest camp este obligatoriu</small>}
@@ -47,7 +47,7 @@ function Login() {
                         <button onClick={routeChange} className="button" disabled={isFetching}>Login</button>
                         <Link to={'/reset-password'}>Ai uitat parola?</Link>
                     </div>
-                </form>
+                </form> */}
             </div>
         </div>
     )

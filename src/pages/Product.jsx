@@ -2,7 +2,7 @@ import React from 'react';
 import { Thumbs, EffectCreative, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useLocation } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { publicRequest } from '../requestMethod';
 import { addProduct } from '../redux/cart'
@@ -10,8 +10,6 @@ import { addProduct } from '../redux/cart'
 import ProductSmall from '../components/ProductSmall'
 import ProductFull from '../components/ProductFull'
 import Breadcrumbs from '../components/Breadcrumbs'
-
-import { productsSmall } from '../data/productsSmall';
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -27,6 +25,8 @@ function Product() {
     const [size, setSize] = React.useState(null);
     let [count, setCount] = React.useState(1);
     const dispatch = useDispatch();
+    const recent = useSelector(state => state.recent);
+
 
     const location = useLocation();
     const id = location.pathname.split('/')[2];
@@ -211,11 +211,14 @@ function Product() {
                             modules={[Navigation]}
                             className="product-related"
                         >
-                            {relatedProducts.map((product, i) => (
-                                <SwiperSlide key={`${product.id}_${i}`}>
-                                    <ProductFull product={product} />
-                                </SwiperSlide>
-                            ))}
+                            {
+                                console.log(product.categories)
+                                // relatedProducts.map((product, i) => (
+                                //     <SwiperSlide key={`${product.id}_${i}`}>
+                                //         <ProductFull product={product} />
+                                //     </SwiperSlide>
+                                // ))
+                            }
                         </Swiper>
                     </div>
 
@@ -226,18 +229,21 @@ function Product() {
                 </div>
             </div>
 
-            <section className='watched'>
-                <div className="watched__container">
-                    <h2>Ai privit</h2>
-                    <div className="watched__body watched-body d-grid-6">
-                        {
-                            productsSmall.map(product => (
-                                <ProductSmall product={product} key={product.id} />
-                            ))
-                        }
+            {
+                recent.products &&
+                <section className='watched'>
+                    <div className="watched__container">
+                        <h2>Ai privit</h2>
+                        <div className="watched__body watched-body d-grid-6">
+                            {
+                                recent.products.map(product => (
+                                    <ProductSmall product={product} key={product._id} />
+                                ))
+                            }
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            }
         </div>
     )
 }
