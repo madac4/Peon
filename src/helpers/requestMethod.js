@@ -3,7 +3,7 @@ import axios from 'axios';
 // const BASE_URL = 'http://localhost:8000/api';
 const BASE_URL = 'https://react-wild.herokuapp.com/api';
 let TOKEN = "";
-const localToken = localStorage.getItem('persist:root') && JSON.parse(JSON.parse(localStorage.getItem('persist:root')).auth).token;
+const localToken = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).auth).token && JSON.parse(JSON.parse(localStorage.getItem('persist:root')).auth).token;
 if (localToken) {
     TOKEN = localToken;
 }

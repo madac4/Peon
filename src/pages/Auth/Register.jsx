@@ -21,16 +21,19 @@ function Register({registerUser, loginUser, isAuth, isLoading, user}) {
         }
     }
 
-    if (isAuth && user) {
-        const {isAdmin, isMerchant} = user;
-        if (isAdmin) {
-            navigate('/profile/admin');
-        }else if(isMerchant){
-            navigate('/profile/merchant');
-        }else{
-            navigate('/profile/user');
+    React.useEffect(() => {
+        if (isAuth && user) {
+            const {isAdmin, isMerchant} = user;
+            if (isAdmin) {
+                navigate('/profile/admin');
+            }else if(isMerchant){
+                navigate('/profile/merchant');
+            }else{
+                navigate('/profile/user');
+            }
         }
-    }
+    }, [isAuth, user, navigate])
+    
     
     return (
         <div className={styles.authBody}>
